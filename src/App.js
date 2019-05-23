@@ -1,20 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Json from "./db.json";
 import "./App.scss";
 
-function App() {
-  const addOpenClass = e => {
-    debugger;
-    e.parent().toggleClass("open");
-  };
+const App = () => {
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="App container">
       <h3 className="main-header">Simple React Search</h3>
       <div>
-        <div className="search">
+        <div className={open ? "search open" : "search"}>
           <input type="search" className="search-box" />
-          <span className="search-button" onClick={addOpenClass}>
+          <span
+            className="search-button"
+            onClick={() => setOpen(open => !open)}
+          >
             <span className="search-icon" />
           </span>
         </div>
@@ -30,6 +30,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
