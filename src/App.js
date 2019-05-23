@@ -1,12 +1,23 @@
 import React from "react";
 import Json from "./db.json";
+import "./App.scss";
 
 function App() {
+  const addOpenClass = e => {
+    debugger;
+    e.parent().toggleClass("open");
+  };
+
   return (
-    <div className="App">
-      <h3>Simple React Search</h3>
+    <div className="App container">
+      <h3 className="main-header">Simple React Search</h3>
       <div>
-        <input type="text" value="" onChange="" placeholder="type name here" />
+        <div className="search">
+          <input type="search" className="search-box" />
+          <span className="search-button" onClick={addOpenClass}>
+            <span className="search-icon" />
+          </span>
+        </div>
         <ul>
           {Json.map(l => {
             return (
