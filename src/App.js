@@ -18,7 +18,7 @@ const App = () => {
             <span className="search-icon" />
           </span>
         </div>
-        <ul>
+        <ul className="data-list">
           {Json.map(l => {
             return (
               <li>
