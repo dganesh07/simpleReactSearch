@@ -18,7 +18,7 @@ const App = () => {
 
   if (search.length > 0) {
     _users = _users.filter(function(user) {
-      return user.name.toLowerCase().match(search);
+      return user.name.english.toLowerCase().match(search);
     });
   }
 
@@ -49,7 +49,7 @@ const App = () => {
           {_users.map(l => {
             return (
               <li>
-                {l.name} <a href="#">{l.email}</a>
+                {l.name.english} <a href="#" />
               </li>
             );
           })}
